@@ -1,0 +1,32 @@
+extends layout 
+
+block content
+    .w3-card-4
+            header.w3-container.w3-teal
+                h1
+                    span #{title}
+            .w3-container
+                table.w3-table-all
+                    tr
+                        th id contrato
+                        th objeto contrato
+                        th data de celebração
+                        th preço contratual 
+                        th NIPC entidade comunicante
+                        th entidade comunicante 
+
+                    each item in lista
+                        tr 
+                            td
+                                a(href=`/${item.idcontrato}`)= item.idcontrato
+
+                            td= item.objetocontrato
+
+                            td= item.dataCelebracaoContrato
+
+                            td= item.precoContratual
+
+                            td  
+                                a(href=`/entidades/${item.NIPC_entidade_comunicante}`)= item.NIPC_entidade_comunicante
+
+                            td= item.entidade_comunicante
